@@ -36,7 +36,7 @@ end
 
 # Apply the content to the template
 # TODO: Extend this option to include more snippets like introduction, footer etc.
-mail = File.read('newsflash-nl.html').gsub("%CONTENT%", content)
+mail = File.read('template.html').gsub("%CONTENT%", content)
 premailer = Premailer.new(mail, :warn_level => Premailer::Warnings::SAFE, :with_html_string => true)
 
 
