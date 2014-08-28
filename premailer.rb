@@ -8,6 +8,7 @@ require 'inifile'
 require 'trollop'
 
 # Load configuration file
+# TODO: Add an option to overrule the default ini-file.
 config = IniFile.load('premailer.ini')
 
 
@@ -29,6 +30,7 @@ options = { :address              => config['server']['address'],
 
 
 # Read the content file given as argument
+# TODO: Add a content snippet option, possibly including multiple snippets
 if ARGV.length != 1
   puts "Please provide a single file as argument"
 else
