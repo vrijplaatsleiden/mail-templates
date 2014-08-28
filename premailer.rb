@@ -13,10 +13,13 @@ config = IniFile.load('premailer.ini')
 
 
 # Overrule the default message options in the ini-file with command arguments
+# TODO: Add a content snippet option, possibly including multiple snippets
 opts = Trollop::options do
   opt :to, "Send the mail to", :default => config['message']['to']
   opt :from, "Use the from mail address", :default => config['message']['from']
   opt :subject, "Add a subject to the mail", :default => config['message']['subject']
+  opt :template, "Use file as template", :default => config['message']['template']
+  opt :content, "Use content file", :default => config['message']['content']
 end
 
 
@@ -29,18 +32,9 @@ options = { :address              => config['server']['address'],
 }
 
 
-# Read the content file given as argument
-# TODO: Add a content snippet option, possibly including multiple snippets
-if ARGV.length != 1
-  puts "Please provide a single file as argument"
-else
-  content = File.read(ARGV[0])
-end
-
-
 # Apply the content to the template
 # TODO: Extend this option to include more snippets like introduction, footer etc.
-mail = File.read('template.html').gsub("%CONTENT%", content)
+mail = File.read('template.html').gsub("%CONTENT%", File.read(opts[:content]))
 premailer = Premailer.new(mail, :warn_level => Premailer::Warnings::SAFE, :with_html_string => true)
 
 
