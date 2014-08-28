@@ -18,6 +18,8 @@ OpenSuse
    zypper install ruby-devel
    gem install hpricot
    gem install premailer
+   gem install inifile
+   gem install trollop
 
 Fedora 20
 ^^^^^^^^^
@@ -29,6 +31,8 @@ Fedora 20
    gem install mail
    gem install bluecloth
    gem install hpricot
+   gem install inifile
+   gem install trollop
 
 
 Working with templates

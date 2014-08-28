@@ -5,16 +5,18 @@ require 'premailer'
 require 'mail'
 require 'bluecloth'
 require 'inifile'
+require 'trollop'
 
 # Load configuration file
 config = IniFile.load('premailer.ini')
 
 
-# Set the (default) message options 
-# TODO: Support CLI arguments to overrule defaults in the future
-to       = config['message']['to']
-from     = config['message']['from']
-subject  = config['message']['subject']
+# Overrule the default message options in the ini-file with command arguments
+opts = Trollop::options do
+  opt :to, "Send the mail to", :default => config['message']['to']
+  opt :from, "Use the from mail address", :default => config['message']['from']
+  opt :subject, "Add a subject to the mail", :default => config['message']['subject']
+end
 
 
 # Set the mail server options
@@ -46,9 +48,9 @@ Mail.defaults do
 end
 
 Mail.deliver do
-       to to
-     from from
-  subject subject
+       to opts[:to]
+     from opts[:from]
+  subject opts[:subject]
 
   html_part do
     content_type 'text/html; charset=UTF-8'
