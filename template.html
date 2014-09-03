@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W4C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Source+Sans+Pro:300,400,400i,900" type='text/css'>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width"/>
 	<style>
@@ -22,7 +22,7 @@ body{
   -ms-text-size-adjust:100%; 
   margin:0; 
   padding:0;
-  background-color: #f5f4f3;
+  background-color: #fff;
 }
 
 .ExternalClass { 
@@ -74,6 +74,10 @@ table {
   border-collapse: collapse;
 }
 
+table.container {
+  background-color: #faf9fa;
+}
+
 td { 
   word-break: break-word;
   -webkit-hyphens: auto;
@@ -93,6 +97,10 @@ hr {
   background-color: #d9d9d9; 
   height: 1px; 
   border: none;
+}
+
+ul {
+  margin: 5px 0px;
 }
 
 /* Responsive Grid */
@@ -119,7 +127,7 @@ table.container table.row {
 }
 
 td.wrapper {
-  padding: 10px 20px 0px 0px;
+  padding: 10px 10px 0px 0px;
   position: relative;
 }
 
@@ -237,6 +245,7 @@ table.column .text-pad {
   padding-right: 10px;
 }
 
+
 table.columns .left-text-pad,
 table.columns .text-pad-left,
 table.column .left-text-pad,
@@ -249,6 +258,7 @@ table.columns .text-pad-right,
 table.column .right-text-pad,
 table.column .text-pad-right {
   padding-right: 10px;
+  padding-left: 20px;
 }
 
 /* Block Grid */
@@ -326,44 +336,45 @@ img.center {
 
 body, table.body, h1, h2, h3, h4, h5, h6, p, td {
   font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif; 
-  font-weight: normal;
   margin: 0;
   text-align: left;
-  line-height: 1.3;
 }
 
 body, table.body, h2, h3, h4, h5, h6, p, td {
   padding:0;
+  line-height: 1.3
 }
 
 h1 {
-  padding-left: 10px;
+  padding-left: 20px;
+  line-height: 1.05;
 }
 
 body, table.body, p, td {
+  font-weight: normal;
   color: #2d4343;
 }
 
 h1, h2, h3, h4, h5, h6 {
   word-break: normal;
-  text-transform: uppercase;
   font-weight: bold;
+}
+
+h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  color: #e23f1e;
 }
 
 h1 {
   color: #008ebe;
 }
 
-h2, h3, h4, h5, h6 {
-  color: #e23f1e;
-}
-
 h1 {font-size: 40px;}
 h2 {font-size: 20px;}
-h3 {font-size: 28px;}
-h4 {font-size: 24px;}
-h5 {font-size: 20px;}
-h6 {font-size: 16px;}
+h3 {font-size: 14px;}
+h4 {font-size: 12px;}
+h5 {font-size: 10px;}
+h6 {font-size: 10px;}
 body, table.body, p, td {font-size: 16px;line-height:19px;}
 
 p.lead, p.lede, p.leed {
@@ -371,7 +382,7 @@ p.lead, p.lede, p.leed {
   line-height:21px;
 }
 
-p { 
+p {
   margin-bottom: 10px;
 }
 
@@ -381,7 +392,7 @@ small {
 
 a {
   color: #008ebe;
-  text-decoration:none: none;
+  text-decoration: none;
 }
 
 a:hover {
@@ -423,22 +434,68 @@ h6 a:visited {
   color: #2ba6cb !important; 
 } 
 
+/* Title */
+
+td#title {
+  padding: 10px 10px 0px 0px;
+}
+
+
+/* Logo */
+
+td#logo img {
+  float: right;
+}
+
+td#logo {
+  padding: 10px 20px 0px 20px;
+}
+
 /* Items */
 
 .item {
   padding-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Footer */
+
+table.footer {
+  margin: 20px auto;
+}
+
+table.footer td.wrapper {
+  padding: 0px;
+}
+
+
+.footer p,
+.footer a {
+  font-weight: 300;
+  color: #2d4343 !important;
+}
+
+.footer h3 {
+  font-weight: 900;
+}
+
+.footer td.left-text-pad {
+  background-image: url(http://vrijplaatsleiden.nl/wp-content/uploads/2014/09/logouitsnedegeel.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
 }
 
 /* Panels */
 
 .panel {
-  background: #f2f2f2;
-  border: 1px solid #d9d9d9;
-  padding: 10px !important;
+  padding: 10px 20px 10px 20px !important;
 }
 
+.panel p {
+  font-style: italic;
+}
 .sub-grid table {
   width: 100%;
 }
@@ -468,7 +525,7 @@ table.large-button td {
   text-align: center;
   background: #2ba6cb;
   border: 1px solid #2284a1;
-  color: #ffffff;
+  color: #faf9fafaf9fa;
   padding: 8px 0;
 }
 
@@ -496,7 +553,7 @@ table.large-button td a {
   font-weight: bold;
   text-decoration: none;
   font-family: Helvetica, Arial, sans-serif;
-  color: #ffffff;
+  color: #faf9fafaf9fa;
   font-size: 16px;
 }
 
@@ -526,7 +583,7 @@ table.button:active td {
 table.button:hover td a,
 table.button:visited td a,
 table.button:active td a {
-  color: #fff !important;
+  color: #faf9fa !important;
 }
 
 table.button:hover td,
@@ -552,7 +609,7 @@ table.medium-button td a:visited,
 table.large-button:hover td a,
 table.large-button:active td a,
 table.large-button td a:visited {
-  color: #ffffff !important; 
+  color: #faf9fafaf9fa !important; 
 }
 
 table.secondary td {
@@ -704,7 +761,7 @@ body.outlook p {
 
   table[class="body"] .right-text-pad,
   table[class="body"] .text-pad-right {
-    padding-left: 10px !important;
+    padding-left: 20px !important;
   }
 
   table[class="body"] .left-text-pad,
@@ -754,32 +811,15 @@ body.outlook p {
     }
 
     .template-label {
-      color: #ffffff;
+      color: #faf9fafaf9fa;
       font-weight: bold;
       font-size: 11px;
     }
 
-    .callout .wrapper {
+    .callout {
       padding-bottom: 20px;
     }
 
-    .callout .panel {
-      background: #f5f4f3;
-      border-color: #ecf0f0;
-    }
-
-    .header {
-      background: #fff;
-    }
-
-    .footer .wrapper {
-      background: #f5f4f3;
-      border-color: #ecf0f0;
-    }
-
-    .footer h5 {
-      padding-bottom: 10px;
-    }
 
     table.columns .text-pad {
       padding-left: 10px;
@@ -787,21 +827,25 @@ body.outlook p {
     }
 
     table.columns .left-text-pad {
-      padding-left: 10px;
+      padding-left: 20px;
+      padding-top: 15px;
     }
 
     table.columns .right-text-pad {
       padding-right: 10px;
+      padding-top: 5px;
     }
 
     @media only screen and (max-width: 600px) {
 
       table[class="body"] .right-text-pad {
-        padding-left: 10px !important;
+        padding-left: 20px !important;
+      padding-top: 5px;
       }
 
       table[class="body"] .left-text-pad {
         padding-right: 10px !important;
+        padding-top: 15px;
       }
     }
 
@@ -824,11 +868,11 @@ body.outlook p {
 
                         <table class="twelve columns">
                           <tr>
-                            <td class="eleven sub-columns" style="text-align:left; vertical-align:middle">
+                            <td id="title" class="ten sub-columns" style="text-align:left; vertical-align:middle">
                                 <h1><!-- TITLE --></h1>
                             </td>
-                            <td class="one sub-columns last" style="align:right;">
-                              <img src="http://vrijplaatsleiden.nl/wp-content/uploads/2014/04/logo-43x75.png">
+                            <td id="logo" class="two sub-columns last" style="align:right;">
+                              <img src="http://vrijplaatsleiden.nl/wp-content/uploads/2014/08/logo43x76.png">
                             </td>
                           </tr>
                         </table>
@@ -878,17 +922,23 @@ body.outlook p {
                     </td>
                   </tr>
                 </table>
-
-
-                <!-- FOOTER -->
-
-
-
               <!-- container end below -->
               </td>
             </tr>
           </table>
 
+          <table class="container footer">
+            <tr>
+              <td>
+                <table class="row">
+                  <tr>
+                    <!-- FOOTER -->
+                  </tr>
+                </table>
+              <!-- container end below -->
+              </td>
+            </tr>
+          </table>
         </center>
 			</td>
 		</tr>
