@@ -23,6 +23,7 @@ opts = Trollop::options do
   opt :content, "Content file to use", :type => :string, :default => config['message']['content']
   opt :header, "Optional header file to use", :type => :string, :default => config['message']['header']
   opt :footer, "Optional footer file to use", :type => :string, :default => config['message']['footer']
+  opt :unsubscribe, "Optional unsubscribe file to use", :type => :string, :default => config['message']['unsubscribe']
 end
 
 # Check if specified files actually exist
@@ -50,6 +51,14 @@ if opts[:footer]
   end
 end
 
+if opts[:unsubscribe]
+  unless File.file?(opts[:unsubscribe])
+    puts "The unsubscribe file you specified doesn't exist."
+    exit
+  end
+end
+
+
 # Set the mail server options
 options = { :address              => config['server']['address'],
             :port                 => config['server']['port'],
@@ -76,6 +85,11 @@ end
 # Add footer
 if opts[:footer]
   mail = mail.gsub("<!-- FOOTER -->", File.read(opts[:footer]))
+end
+
+# Add footer
+if opts[:unsubscribe]
+  mail = mail.gsub("<!-- UNSUBSCRIBE -->", File.read(opts[:unsubscribe]))
 end
 
 # And always add content
